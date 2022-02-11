@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="wanted_fragment_label">Wanted</string>
+    <string name="departments_fragment_label">Departments</string>
+    <string name="photo_robot_fragment_label">PhotoRobot</string>
+    <string name="paint_fragment_label">Paint</string>
+    <string name="about_us_fragment_label">About Us</string>
+    <string name="develop_function">Функция находиться в разработке (заказчик не выдал доуступ к серверу)</string>
+    <string name="main_guest_fragment_title">Main</string>
+</resources>

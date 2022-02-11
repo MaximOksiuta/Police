@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signInFragment">
+
+    <fragment
+        android:id="@+id/mainGuestFragment"
+        android:name="com.example.myapplication.fragments.MainGuestFragment"
+        android:label="fragment_main_guest"
+        tools:layout="@layout/fragment_main_guest" />
+    <fragment
+        android:id="@+id/captchaFragment"
+        android:name="com.example.myapplication.fragments.CaptchaFragment"
+        android:label="fragment_captcha"
+        tools:layout="@layout/fragment_captcha" >
+        <action
+            android:id="@+id/action_captchaFragment_to_mainGuestFragment2"
+            app:destination="@id/mainGuestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.myapplication.fragments.SignInFragment"
+        android:label="fragment_signin"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_captchaFragment2"
+            app:destination="@id/captchaFragment" />
+    </fragment>
+</navigation>
