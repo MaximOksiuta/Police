@@ -13,6 +13,8 @@ fun Fragment.navigator(): Navigator{
 }
 
 interface Navigator {
+    fun checkLogin() // проверить есть ли сохраненные данные о входе в аккаунт
+
     fun openCaptcha(loginData: LoginInputData) // открыть фрагмент с каптчей (fragment_captcha)
 
     fun login(loginData: LoginInputData) // опционально: сохранить данные в sharedPreferences; открыть основной фрагмент (fragment_main_guest/?)

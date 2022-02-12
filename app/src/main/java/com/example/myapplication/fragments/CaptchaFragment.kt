@@ -17,16 +17,18 @@ class CaptchaFragment: Fragment(R.layout.fragment_captcha) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = FragmentCaptchaBinding.inflate(layoutInflater)
         arguments?.getParcelable<LoginInputData>(ARG_LOGIN_DATA)?.let { updateUI(it) }
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentCaptchaBinding.inflate(inflater, container, false)
+
         with(binding) {
-            btnConfirmCaptcha.setOnClickListener { _ ->
+            btnConfirmCaptcha.setOnClickListener {
                 if (etCaptcha.text.toString() == "ic8") {
                     navigator().login(
                         LoginInputData(
@@ -52,7 +54,7 @@ class CaptchaFragment: Fragment(R.layout.fragment_captcha) {
 
     companion object{
 
-        private val ARG_LOGIN_DATA = "ARG_LOGIN_DATA"
+        private const val ARG_LOGIN_DATA = "ARG_LOGIN_DATA"
 
         fun createArgs(data: LoginInputData) = bundleOf(ARG_LOGIN_DATA to data)
     }
